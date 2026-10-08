@@ -1,0 +1,23 @@
+{
+  "name": "hydroguard-android",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HydroGuard Android wrapper built with Capacitor",
+  "scripts": {
+    "copy:web": "node scripts/copy-web.mjs",
+    "sync": "npm run copy:web && npx cap sync android",
+    "open": "npx cap open android",
+    "build:web": "npm --prefix ../artifacts/hydroguard run build",
+    "prepare:android": "npm run build:web && npm run copy:web && npx cap add android && npx cap sync android",
+    "update:android": "npm run build:web && npm run copy:web && npx cap sync android",
+    "apk:debug": "cd android && gradlew.bat assembleDebug",
+    "apk:release": "cd android && gradlew.bat assembleRelease"
+  },
+  "dependencies": {
+    "@capacitor/android": "latest",
+    "@capacitor/core": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "latest"
+  }
+}

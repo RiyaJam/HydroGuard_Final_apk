@@ -1,0 +1,10 @@
+HYDROGUARD APK — QUICK BUILD
+
+1. Install Android Studio and Node.js 20+.
+2. Open this folder in Command Prompt/PowerShell.
+3. Run: npm install
+4. Run: npm run prepare:android
+5. Run: npm run open
+6. In Android Studio: Build > Generate App Bundles or APKs > Generate APKs > Debug.
+
+For a deployed API, set VITE_API_BASE_URL before rebuilding the web app.
